@@ -1,11 +1,13 @@
+import { FC } from "react";
 import LogoIcon from "../../assets/icons/logo.svg";
+import { LogoText } from "./styled";
 
-export const TopBar = (): JSX.Element => {
+export const TopBar: FC = (): JSX.Element => {
     return (
         <header>
             <div>
                 <LogoIcon />
-                <p>LensCraft</p>
+                <LogoText>LensCraft</LogoText>
             </div>
         </header>
     );

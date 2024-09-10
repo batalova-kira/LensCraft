@@ -2,10 +2,11 @@ import { ITheme } from "../common/types/layout";
 
 export const lightTheme: ITheme = {
     colors: {
-        primary: "#6200ee",
-        background: "#ffffff",
+        default:"#131613",
+        primary: "#db574d",
+        background: "#fff",
         secondaryBackground: "#f3fafb",
-        text: "#000000",
+        textSecondary: "#000000",
         border: "#eeeeee",
     },
     fonts: {
@@ -15,10 +16,11 @@ export const lightTheme: ITheme = {
 
 export const darkTheme: ITheme = {
     colors: {
-        primary: "#bb86fc",
-        background: "#121212",
+        default:"#fff",
+        primary: "#db574d",
+        background: "#131613",
         secondaryBackground: "#232323",
-        text: "#ffffff",
+        textSecondary: "#ffffff",
         border: "#333333",
     },
     fonts: {

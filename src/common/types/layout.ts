@@ -15,10 +15,11 @@ export interface IThemeProviderProps {
 
 export interface ITheme {
   colors: {
+    default: string;
     primary: string;
     background: string;
     secondaryBackground: string;
-    text: string;
+    textSecondary: string;
     border: string;
   };
   fonts: {

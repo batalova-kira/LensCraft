@@ -7,8 +7,8 @@ export const GlobalStyle = createGlobalStyle`
   line-height: 1.5;
   font-weight: 400;
 
-  color: black;
-  background-color: white;
+  color: ${(p) => p.theme.colors.default};
+  background-color: ${(p) => p.theme.colors.background};
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -18,12 +18,12 @@ export const GlobalStyle = createGlobalStyle`
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: ${(p) => p.theme.colors.default};
   text-decoration: inherit;
 }
 
 a:hover {
-  /* color: #535bf2; */
+  color: ${(p) => p.theme.colors.primary};
 }
 
 body {
@@ -46,7 +46,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: ${(p) => p.theme.colors.background};
   cursor: pointer;
   transition: border-color 0.25s;
 }
