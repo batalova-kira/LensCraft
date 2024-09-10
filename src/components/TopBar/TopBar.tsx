@@ -1,3 +1,9 @@
+import LogoIcon from "../../assets/icons/logo.svg";
+
 export const TopBar = (): JSX.Element => {
-    return <div>TopBar</div>;
+    return (
+        <header>
+            <LogoIcon />
+        </header>
+    );
 };
