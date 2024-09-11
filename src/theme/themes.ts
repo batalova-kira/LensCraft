@@ -6,7 +6,7 @@ export const lightTheme: ITheme = {
         primary: "#db574d",
         background: "#fff",
         secondaryBackground: "#f3fafb",
-        textSecondary: "#000000",
+        textSecondary: "#131613",
         border: "#eeeeee",
     },
     fonts: {
@@ -20,7 +20,7 @@ export const darkTheme: ITheme = {
         primary: "#db574d",
         background: "#131613",
         secondaryBackground: "#232323",
-        textSecondary: "#ffffff",
+        textSecondary: "#e6e6e6",
         border: "#333333",
     },
     fonts: {

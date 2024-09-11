@@ -27,17 +27,24 @@ a:hover {
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: baseline normal;
-  min-width: 320px;
-  min-height: 100vh;
-}
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: ${(p) => p.theme.colors.background};
+  }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
+p,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul {
+    margin: 0;
+    padding: 0;
+    font-family: inherit;
+  }
 
 button {
   border-radius: 8px;
