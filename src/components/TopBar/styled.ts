@@ -11,3 +11,21 @@ color: ${(p) => p.theme.colors.default};
         padding: 0px 120px;
     }
 `
+
+export const LogoWrapper = styled.div`
+display:flex;
+gap: 4px;
+/* 
+@media only screen and (min-width: ${breakpoints.medium}) {
+        padding: 0px 120px;
+    } */
+`
+export const HeaderWrapper = styled.header`
+display:flex;
+flex-direction:row;
+justify-content:space-between;
+/* 
+@media only screen and (min-width: ${breakpoints.medium}) {
+        padding: 0px 120px;
+    } */
+`
