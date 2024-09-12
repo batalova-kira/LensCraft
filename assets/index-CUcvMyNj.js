@@ -94,11 +94,12 @@ margin: 0;
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-
+  z-index: 101;
+  
   div {
     width: 100%;
     height: 2px; /* Товщина ліній */
-    background-color: #000;
+    background-color: ${({isOpen:e})=>e?"#fff":"#000"};
     border-radius: 1px;
     position: absolute;
     transition: all 0.3s ease;
@@ -107,18 +108,29 @@ margin: 0;
   @media only screen and (min-width: ${Rr.medium}) {
     display: none;
   }
-`,wC=({isOpen:e,toggle:t})=>R.jsxs(SC,{onClick:t,whileTap:{scale:.9},children:[R.jsx(li.div,{animate:e?{rotate:45,y:5}:{rotate:0,y:0},transition:{duration:.3}}),R.jsx(li.div,{animate:e?{opacity:0}:{opacity:1},transition:{duration:.3},style:{y:6}}),R.jsx(li.div,{animate:e?{rotate:-45,y:5}:{rotate:0,y:12},transition:{duration:.3}})]}),xC=un(li.ul)`
+`,wC=({isOpen:e,toggle:t})=>R.jsxs(SC,{isOpen:e,onClick:t,whileTap:{scale:.9},children:[R.jsx(li.div,{animate:e?{rotate:45,y:5}:{rotate:0,y:0},transition:{duration:.3}}),R.jsx(li.div,{animate:e?{opacity:0}:{opacity:1},transition:{duration:.3},style:{y:6}}),R.jsx(li.div,{animate:e?{rotate:-45,y:5}:{rotate:0,y:12},transition:{duration:.3}})]}),xC=un(li.ul)`
   display: flex;
   flex-direction: column;
   list-style: none;
   gap: 20px;
-  position: absolute;
-  top: 60px;
-  right: 20px;
-  background-color: #fff;
-  padding: 100px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
+
+  position: fixed; /* Зміна на fixed для фіксації на екрані */
+  top: 0;
+  right: 0;
+  height: 100vh; /* Займає всю висоту екрану */
+  width: 300px; /* Ширина меню */
+
+  padding: 100px 30px;
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Тінь з лівої сторони */
+  border-radius: 0; /* Займає всю праву частину екрану, тому без скруглень */
+  background: ${e=>e.theme.colors.default}; 
+  z-index: 100;
+a{
+  color: ${e=>e.theme.colors.background};
+ 
+}
+  
+  
 `,PC=({isOpen:e,toggle:t})=>R.jsxs(xC,{initial:{opacity:0,y:-50},animate:e?{opacity:1,y:0}:{opacity:0,y:-50},transition:{duration:.3},children:[R.jsx("li",{children:R.jsx("a",{href:"#home",onClick:t,children:"Home"})}),R.jsx("li",{children:R.jsx("a",{href:"#about",onClick:t,children:"About"})}),R.jsx("li",{children:R.jsx("a",{href:"#services",onClick:t,children:"Services"})}),R.jsx("li",{children:R.jsx("a",{href:"#contacts",onClick:t,children:"Contacts"})})]}),CC=()=>{const[e,t]=L.useState(!1),n=()=>{t(!e)};return R.jsxs(X1,{children:[R.jsxs(Q1,{children:[R.jsx(Hv,{}),R.jsx(Y1,{children:"LensCraft"})]}),R.jsx("nav",{children:R.jsxs(Z1,{children:[R.jsx("li",{children:R.jsx("a",{href:"#home",children:"Home"})}),R.jsx("li",{children:R.jsx("a",{href:"#about",children:"About"})}),R.jsx("li",{children:R.jsx("a",{href:"#services",children:"Services"})}),R.jsx("li",{children:R.jsx("a",{href:"#contacts",children:"Contacts"})})]})}),R.jsx(wC,{isOpen:e,toggle:n}),e&&R.jsx(PC,{isOpen:e,toggle:n})]})},kC=un.div`
 padding: 0px 16px;
 
