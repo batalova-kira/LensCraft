@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
 
-export const StyledBurgerMenu = styled(motion.div)`
+export const StyledBurgerMenu = styled(motion.div)<{ isOpen: boolean }>`
    width: 16px; /* Розмір бургер-меню */
   height: 16px;
   display: flex;
@@ -10,11 +10,12 @@ export const StyledBurgerMenu = styled(motion.div)`
   justify-content: space-between;
   cursor: pointer;
   position: relative;
-
+  z-index: 101;
+  
   div {
     width: 100%;
     height: 2px; /* Товщина ліній */
-    background-color: #000;
+    background-color: ${({ isOpen }) => (isOpen ? '#fff' : '#000')};
     border-radius: 1px;
     position: absolute;
     transition: all 0.3s ease;

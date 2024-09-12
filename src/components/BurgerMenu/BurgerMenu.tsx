@@ -4,7 +4,11 @@ import { StyledBurgerMenu } from "./styled";
 
 export const BurgerMenu: React.FC<IBurgerMenuProps> = ({ isOpen, toggle }) => {
     return (
-        <StyledBurgerMenu onClick={toggle} whileTap={{ scale: 0.9 }}>
+        <StyledBurgerMenu
+            isOpen={isOpen}
+            onClick={toggle}
+            whileTap={{ scale: 0.9 }}
+        >
             {/* Верхня лінія */}
             <motion.div
                 animate={isOpen ? { rotate: 45, y: 5 } : { rotate: 0, y: 0 }}
