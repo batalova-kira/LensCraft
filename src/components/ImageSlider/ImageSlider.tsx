@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FC } from "react";
 import {
+    ArrowBtnsContainer,
     ArrowButton,
     ExpandButton,
     ExtraImage,
@@ -10,6 +11,8 @@ import {
 } from "./styled";
 import { AnimatePresence, motion } from "framer-motion";
 import { ISliderImage } from "../../common/types/slider";
+import { IoIosArrowBack } from "react-icons/io";
+import { IoIosArrowForward } from "react-icons/io";
 
 // Масив зображень
 const images: ISliderImage[] = [
@@ -62,8 +65,14 @@ export const ImageSlider: FC = (): JSX.Element => {
     return (
         <SliderContainer>
             {/* Стрілки перемикання */}
-            <ArrowButton onClick={handlePrev}>←</ArrowButton>
-            <ArrowButton onClick={handleNext}>→</ArrowButton>
+            <ArrowBtnsContainer>
+                <ArrowButton onClick={handlePrev}>
+                    <IoIosArrowBack />
+                </ArrowButton>
+                <ArrowButton onClick={handleNext}>
+                    <IoIosArrowForward />
+                </ArrowButton>
+            </ArrowBtnsContainer>
 
             {/* Анімований заголовок */}
             <AnimatePresence mode="wait">

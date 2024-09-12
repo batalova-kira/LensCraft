@@ -47,21 +47,16 @@ p,
   }
 
 button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: ${(p) => p.theme.colors.background};
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+    display: flex;
+    margin: 0;
+    align-items: center;
+    font-family: inherit;
+    cursor: pointer;
+
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+  }
+
 `

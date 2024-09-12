@@ -15,7 +15,8 @@ export const StyledBurgerMenu = styled(motion.div)<{ isOpen: boolean }>`
   div {
     width: 100%;
     height: 2px; /* Товщина ліній */
-    background-color: ${({ isOpen }) => (isOpen ? '#fff' : '#000')};
+     background-color: ${({ theme, isOpen }) =>
+            isOpen ? theme.colors.background : theme.colors.default};
     border-radius: 1px;
     position: absolute;
     transition: all 0.3s ease;

@@ -8,12 +8,28 @@ export const SliderContainer = styled.div`
   position: relative;
 `;
 
+export const ArrowBtnsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:16px;
+  margin-right: auto;
+`;
+
 export const ArrowButton = styled.button`
-  cursor: pointer;
-  margin: 10px;
-  background: none;
-  border: none;
-  font-size: 2rem;
+display: flex;
+justify-content: center;
+align-items: center;
+
+  color: ${(p) => p.theme.colors.default};
+  border: 1px solid ${(p) => p.theme.colors.default}; 
+  width:32px;
+  height: 32px;
+  border-radius:50%;
+
+  :hover, :focus {
+    color: ${(p) => p.theme.colors.primary};
+  }
 `;
 
 export const ImageContainer = styled.div`
@@ -37,11 +53,6 @@ export const ImageWrapper = styled.img`
   width: 100%;
   height: auto;
   object-fit: cover;
-
-  @media (max-width: 768px) {
-    max-width: 100%;
-    height: auto; // Для мобільних пристроїв зображення адаптується
-  }
 `;
 
 export const ExpandButton = styled.button`

@@ -1,13 +1,11 @@
-import { useMemo, useState } from "react";
 import { ITheme, IThemeProviderProps } from "../common/types/layout";
-import {
-    ThemeProvider as StyledThemeProvider,
-    ThemeContext,
-} from "styled-components";
+import { FC, useState, useMemo } from "react";
+import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { GlobalStyle } from "../GlobalStyles";
 import { darkTheme, lightTheme } from "./themes";
+import { ThemeContext } from "../hooks";
 
-export const ThemeProvider: React.FC<IThemeProviderProps> = ({ children }) => {
+export const ThemeProvider: FC<IThemeProviderProps> = ({ children }) => {
     const [theme, setTheme] = useState<ITheme>(lightTheme);
 
     const toggleTheme = useMemo(() => {
