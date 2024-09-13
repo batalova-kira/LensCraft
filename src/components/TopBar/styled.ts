@@ -30,7 +30,7 @@ justify-content:space-between;
 padding: 16px 0px;
 margin-bottom: 24px;
 
-@media (max-width: 767px) {
+@media (max-width: 1439px) {
     nav ul {
       display: none;
     }

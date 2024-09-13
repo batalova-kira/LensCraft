@@ -1,5 +1,8 @@
 // Тип для зображення
 export interface ISliderImage {
-    src: string;
-    photographer: string;
+    srcWebpX1: string; 
+    srcWebpX2:string;
+        srcJpegX1: string;
+        srcJpegX2: string;
+        photographer: string;
 }

@@ -1,80 +1,103 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
+import { breakpoints } from "../../constants/breakpoints";
 
 export const SliderContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
 `;
 
 export const ArrowBtnsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap:16px;
-  margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+    margin-right: auto;
 `;
 
 export const ArrowButton = styled.button`
-display: flex;
-justify-content: center;
-align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  color: ${(p) => p.theme.colors.default};
-  border: 1px solid ${(p) => p.theme.colors.default}; 
-  width:32px;
-  height: 32px;
-  border-radius:50%;
+    color: ${(p) => p.theme.colors.default};
+    border: 1px solid ${(p) => p.theme.colors.default};
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
 
-  :hover, :focus {
-    color: ${(p) => p.theme.colors.primary};
-  }
+    :hover,
+    :focus {
+        color: ${(p) => p.theme.colors.primary};
+    }
 `;
 
 export const ImageContainer = styled.div`
-  width: 100%;
-  width: 343px;
-  height: 205px;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 100%;
+    width: 343px;
+    height: 205px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
-  @media (min-width: 1440px) {
-    width: 1200px;
-    height: 915px;
-  }
+    
+    @media only screen and (min-width: ${breakpoints.medium}) {
+          width: 738px;
+        height: 441px;
+    }
+
+    @media only screen and (min-width: ${breakpoints.large})  {
+        width: 1200px;
+        height: 915px;
+    }
 `;
-
 
 export const ImageWrapper = styled.img`
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
 `;
 
-export const ExpandButton = styled.button`
-  position: absolute;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(255, 255, 255, 0.7);
-  padding: 5px 10px;
-  cursor: pointer;
-  border: none;
+export const ExpandButton = styled.button<{ $isExpanded: boolean }>`
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+
+    /* border-radius: 50%; */
+    border-radius: ${({ $isExpanded }) => ($isExpanded ? '30px' : '50%')};
+    padding: ${({ $isExpanded }) => ($isExpanded ? '5px 10px' : 'none')};
+
+    background: ${({ $isExpanded, theme }) => ($isExpanded ? theme.colors.secondaryBackground : 'none')};
+    svg {
+    width: 72px;
+    height: 72px;
+    }
+
+    cursor: pointer;
+    border: none;
+
+    @media only screen and (min-width: ${breakpoints.large}) {
+        svg {
+          width: 240px;
+        height: 240px;
+        }
+    }
 `;
 
 export const ExtraImagesContainer = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 20px;
 `;
 
 export const ExtraImage = styled.img`
-  width: 100px;
-  height: 100px;
-  object-fit: cover;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
 `;

@@ -13,33 +13,41 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ISliderImage } from "../../common/types/slider";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
+import HeroBtn from "../../assets/icons/hero-btn.svg";
 
+import image1_x1_webp from "../../assets/hero/hero1_desk_x1.webp";
+import image1_x1_jpeg from "../../assets/hero/hero1_desk_x1.jpg";
+import image1_x2_webp from "../../assets/hero/hero1_desk_x2.webp";
+import image1_x2_jpeg from "../../assets/hero/hero1_desk_x2.jpg";
 // Масив зображень
 const images: ISliderImage[] = [
     {
-        src: "https://images.pexels.com/photos/1730877/pexels-photo-1730877.jpeg",
+        srcWebpX1: image1_x1_webp,
+        srcWebpX2: image1_x2_webp,
+        srcJpegX1: image1_x1_jpeg,
+        srcJpegX2: image1_x2_jpeg,
         photographer: "Photographer 1",
     },
-    {
-        src: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg",
-        photographer: "Photographer 2",
-    },
-    {
-        src: "https://images.pexels.com/photos/28317298/pexels-photo-28317298.jpeg",
-        photographer: "Photographer 3",
-    },
-    {
-        src: "https://images.pexels.com/photos/28225711/pexels-photo-28225711.jpeg",
-        photographer: "Photographer 4",
-    },
-    {
-        src: "https://images.pexels.com/photos/4943484/pexels-photo-4943484.jpeg",
-        photographer: "Photographer 5",
-    },
-    {
-        src: "https://images.pexels.com/photos/4060469/pexels-photo-4060469.jpeg",
-        photographer: "Photographer 6",
-    },
+    // {
+    //     src: "https://images.pexels.com/photos/2253870/pexels-photo-2253870.jpeg",
+    //     photographer: "Photographer 2",
+    // },
+    // {
+    //     src: "https://images.pexels.com/photos/28317298/pexels-photo-28317298.jpeg",
+    //     photographer: "Photographer 3",
+    // },
+    // {
+    //     src: "https://images.pexels.com/photos/28225711/pexels-photo-28225711.jpeg",
+    //     photographer: "Photographer 4",
+    // },
+    // {
+    //     src: "https://images.pexels.com/photos/4943484/pexels-photo-4943484.jpeg",
+    //     photographer: "Photographer 5",
+    // },
+    // {
+    //     src: "https://images.pexels.com/photos/4060469/pexels-photo-4060469.jpeg",
+    //     photographer: "Photographer 6",
+    // },
 ];
 
 // Компонент ImageSlider
@@ -77,7 +85,7 @@ export const ImageSlider: FC = (): JSX.Element => {
             {/* Анімований заголовок */}
             <AnimatePresence mode="wait">
                 <motion.h1
-                    key={images[currentIndex].src}
+                    key={images[currentIndex].srcWebpX1}
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -50 }}
@@ -89,25 +97,34 @@ export const ImageSlider: FC = (): JSX.Element => {
             {/* Анімоване зображення */}
             <ImageContainer>
                 <AnimatePresence mode="wait">
-                    <motion.img
-                        key={images[currentIndex].src}
-                        src={images[currentIndex].src}
-                        alt={images[currentIndex].photographer}
+                    <motion.picture
+                        key={images[currentIndex].srcWebpX1} // Використовуємо srcWebpX1 як ключ
                         initial={{ x: 300, opacity: 0 }}
                         animate={{ x: 0, opacity: 1 }}
                         exit={{ x: -300, opacity: 0 }}
-                        style={{
-                            width: "100%", // Адаптивна ширина
-                            height: "auto", // Висота змінюється пропорційно ширині
-                            maxWidth: "1200px", // Максимальна ширина для великих екранів
-                            maxHeight: "915px", // Максимальна висота для великих екранів
-                            objectFit: "cover", // Обрізка зображення, щоб воно займало всю область
-                        }}
-                    />
+                    >
+                        {/* WebP версії зображень */}
+                        <source
+                            srcSet={`${images[currentIndex].srcWebpX1} 1x, ${images[currentIndex].srcWebpX2} 2x`}
+                            type="image/webp"
+                        />
+
+                        {/* JPEG версії зображень */}
+                        <img
+                            srcSet={`${images[currentIndex].srcJpegX1} 1x, ${images[currentIndex].srcJpegX2} 2x`}
+                            src={images[currentIndex].srcJpegX1} // fallback для браузерів без srcSet підтримки
+                            alt={images[currentIndex].photographer}
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "cover",
+                            }}
+                        />
+                    </motion.picture>
                 </AnimatePresence>
 
-                <ExpandButton onClick={toggleExpand}>
-                    {isExpanded ? "Hide Photos" : "Show Photos"}
+                <ExpandButton onClick={toggleExpand} $isExpanded={isExpanded}>
+                    {isExpanded ? "Hide Photos" : <HeroBtn  />}
                 </ExpandButton>
             </ImageContainer>
 
@@ -120,7 +137,7 @@ export const ImageSlider: FC = (): JSX.Element => {
                     {images.map((image, index) => (
                         <ExtraImage
                             key={index}
-                            src={image.src}
+                            src={image.srcWebpX1}
                             alt={image.photographer}
                         />
                     ))}

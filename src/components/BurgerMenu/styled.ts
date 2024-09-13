@@ -22,7 +22,7 @@ export const StyledBurgerMenu = styled(motion.div)<{ isOpen: boolean }>`
     transition: all 0.3s ease;
   }
 
-  @media only screen and (min-width: ${breakpoints.medium}) {
+  @media only screen and (min-width: ${breakpoints.large}) {
     display: none;
   }
 `;
