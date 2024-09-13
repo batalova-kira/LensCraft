@@ -4,5 +4,6 @@ export interface ISliderImage {
     srcWebpX2:string;
         srcJpegX1: string;
         srcJpegX2: string;
-        photographer: string;
+    shoot: string;
+    date: string;
 }

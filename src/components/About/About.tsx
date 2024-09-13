@@ -1,8 +1,16 @@
+import { AboutHeaderText, AboutHeaderWrapper, AboutTitle, GridBackground } from "./styled";
+
 export const About = (): JSX.Element => {
     return (
         <section id="about">
-            <h1>About Section</h1>
-            <p>Learn more about us!</p>
+            <AboutHeaderWrapper>
+            <AboutHeaderText>About</AboutHeaderText>
+            <AboutHeaderText>WHAT YOU NEED TO KNOW ABOUT PHOENIX</AboutHeaderText>
+            </AboutHeaderWrapper>
+            <GridBackground>
+                <AboutTitle>WE ARE A PHOTOGRAHY STUDIO</AboutTitle>
+                <div></div>
+            </GridBackground>
         </section>
     );
 };

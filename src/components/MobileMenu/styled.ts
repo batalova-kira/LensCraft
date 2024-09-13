@@ -11,9 +11,9 @@ export const StyledMobileMenu = styled(motion.ul)`
   top: 0;
   right: 0;
   height: 100vh; /* Займає всю висоту екрану */
-  width: 300px; /* Ширина меню */
+  width: 260px; /* Ширина меню */
 
-  padding: 100px 30px;
+  padding: 80px 30px;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* Тінь з лівої сторони */
   border-radius: 0; /* Займає всю праву частину екрану, тому без скруглень */
   background: ${(p) => p.theme.colors.default}; 
