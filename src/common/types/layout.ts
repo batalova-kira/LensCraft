@@ -21,7 +21,7 @@ export interface ITheme {
     secondaryBackground: string;
     textSecondary: string;
     textAccent: string;
-    border: string;
+    backgroundAbout: string;
   };
   fonts: {
     main: string;

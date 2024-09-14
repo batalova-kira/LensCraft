@@ -6,8 +6,6 @@ const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 
 export const Main: FC = () => {
-    // const [theme, colorMode] = useMode(); // Використовуємо хук useMode для отримання теми та функції зміни кольорової схеми
-
     return (
         <React.StrictMode>
             <App />

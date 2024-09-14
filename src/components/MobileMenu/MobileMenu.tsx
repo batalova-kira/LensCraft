@@ -1,7 +1,8 @@
 import { IMobileMenuProps } from "../../common/types/topbar";
 import { StyledMobileMenu } from "./styled";
+import { FC } from "react";
 
-export const MobileMenu: React.FC<IMobileMenuProps> = ({ isOpen, toggle }) => {
+export const MobileMenu: FC<IMobileMenuProps> = ({ isOpen, toggle }) => {
     return (
         <StyledMobileMenu
             initial={{ opacity: 0, y: -50 }}

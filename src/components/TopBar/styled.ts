@@ -40,6 +40,12 @@ margin-bottom: 24px;
         padding: 35px 0px;
     }
 `
+
+export const NavLinkList = styled.nav`
+display:flex;
+flex-direction:row;
+gap: 24px;
+`
 export const InputBtnWrapper = styled.button`
   border: none;
   background-color: transparent;
@@ -54,7 +60,7 @@ export const LinkListWrapper = styled.ul`
 display:flex;
 flex-direction:row;
 list-style: none; 
-gap:4px;
+gap:16px;
 margin: 0;
 `
 

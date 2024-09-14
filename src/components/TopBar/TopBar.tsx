@@ -6,6 +6,7 @@ import {
     LinkListWrapper,
     LogoText,
     LogoWrapper,
+    NavLinkList,
 } from "./styled";
 import { BurgerMenu } from "../BurgerMenu/BurgerMenu";
 import { MobileMenu } from "../MobileMenu/MobileMenu";
@@ -27,7 +28,7 @@ export const TopBar: FC = (): JSX.Element => {
                 <LogoIcon />
                 <LogoText>LensCraft</LogoText>
             </LogoWrapper>
-            <nav>
+            <NavLinkList>
                 <InputBtnWrapper onClick={toggleTheme}>
                     {theme === lightTheme ? (
                         <MdOutlineLightMode />
@@ -49,7 +50,7 @@ export const TopBar: FC = (): JSX.Element => {
                         <a href="#contacts">Contacts</a>
                     </li>
                 </LinkListWrapper>
-            </nav>
+            </NavLinkList>
             <BurgerMenu isOpen={isOpen} toggle={toggleMenu} />
             {isOpen && <MobileMenu isOpen={isOpen} toggle={toggleMenu} />}
         </HeaderWrapper>

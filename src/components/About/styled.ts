@@ -7,6 +7,14 @@ justify-content: space-between;
 align-items: center;
 
 padding: 13px 0px;
+
+@media only screen and (min-width: ${breakpoints.medium})  {
+  padding: 24px 0px;
+  } 
+
+@media only screen and (min-width: ${breakpoints.large})  {
+  padding: 40px 0px;
+  }
 `;
 
 export const AboutHeaderText = styled.h3`
@@ -17,11 +25,9 @@ line-height: 1.1;
 text-transform: uppercase;
 color: ${(p) => p.theme.colors.textAccent};
 
-// Для мобільних пристроїв
-@media only screen and (max-width: 767px) {
-    max-width: 124px; 
-    word-wrap: break-word; 
-  }
+max-width: 124px; 
+word-wrap: break-word; 
+
 
   @media only screen and (min-width: ${breakpoints.medium})  {
     font-weight: 600;
@@ -31,18 +37,31 @@ color: ${(p) => p.theme.colors.textAccent};
 `;
 
 export const GridBackground = styled.div`
+  display:flex;
+  flex-direction: column;
+
   width: 100%;
-  height: 310px;
   padding: 24px 0px;
   // Сітка
   background-image: 
     linear-gradient(${(p) => p.theme.colors.textAccent} 1px, transparent 1px),
     linear-gradient(90deg, ${(p) => p.theme.colors.textAccent} 1px, transparent 1px);
   
-  background-size: 48px 48px;
+  background-size: 40px 40px;
 
   @media only screen and (min-width: ${breakpoints.medium})  {
+    background-size: 60px 60px;
+    padding: 30px 15px 50px 15px;
+  }
+
+  @media only screen and (min-width: ${breakpoints.large})  {
+    flex-direction: row;
+    justify-content: space-between;
     background-size: 96px 96px;
+
+    margin-right: -10px;
+    margin-left: -10px;
+    padding: 50px 30px 100px 30px;
   }
 `;
 
@@ -52,14 +71,60 @@ font-size: 32px;
 line-height: 1.1;
 text-transform: uppercase;
 
+max-width: 270px; 
+word-wrap: break-word; 
+margin-bottom: 16px;
+  
 color: ${(p) => p.theme.colors.textSecondary};
 
-@media only screen and (max-width: 767px) {
-    max-width: 249px; 
-    word-wrap: break-word; 
+@media only screen and (min-width: ${breakpoints.medium})  {
+    font-size: 42px;
+    line-height: 1.1;
+
+    margin-bottom: 36px;
+    max-width: none; 
   }
 
-  @media only screen and (min-width: ${breakpoints.medium})  {
-    max-width: none; 
+  @media only screen and (min-width: ${breakpoints.large})  {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 1;
+
+    margin-bottom: 0;
+    max-width: 462px; 
+  }
+`;
+
+export const AboutTextWrapper = styled.div`
+display: flex;
+flex-direction: column;
+gap: 48px;
+
+@media only screen and (min-width: ${breakpoints.medium})  {
+    gap: 30px;
+  }
+
+  @media only screen and (min-width: ${breakpoints.large})  {
+    gap: 100px;
+  }
+`;
+
+export const AboutText = styled.p`
+font-weight: 300;
+font-size: 12px;
+text-transform: uppercase;
+  
+color: ${(p) => p.theme.colors.textSecondary};
+
+@media only screen and (min-width: ${breakpoints.medium})  {
+    font-size: 14px;
+  }
+
+  @media only screen and (min-width: ${breakpoints.large})  {
+    max-width: 510px; 
+    word-wrap: break-word; 
+
+    font-size: 16px;
+    line-height: 1.2;
   }
 `;
