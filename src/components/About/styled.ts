@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
+import { IGridBackgroundProps } from "../../common/types/about";
 
 export const AboutHeaderWrapper = styled.div`
 display: flex;
@@ -36,31 +37,37 @@ word-wrap: break-word;
   }
 `;
 
-export const GridBackground = styled.div`
-  display:flex;
+export const GridBackground = styled.div<IGridBackgroundProps>`
+  display: flex;
   flex-direction: column;
-
   width: 100%;
   padding: 24px 0px;
-  // Сітка
-  background-image: 
-    linear-gradient(${(p) => p.theme.colors.textAccent} 1px, transparent 1px),
-    linear-gradient(90deg, ${(p) => p.theme.colors.textAccent} 1px, transparent 1px);
-  
-  background-size: 40px 40px;
 
-  @media only screen and (min-width: ${breakpoints.medium})  {
-    background-size: 60px 60px;
+  // Фон за замовчуванням (градієнт) або вибране зображення
+  background-color: ${(p) => p.$backgroundImage ? 'transparent' : p.theme.colors.backgroundBlack};
+  
+  background-image: 
+    linear-gradient(${(p) => p.theme.colors.textAccent} 1px, transparent 1px), /* Сітка */
+    linear-gradient(90deg, ${(p) => p.theme.colors.textAccent} 1px, transparent 1px), /* Сітка */
+    ${(p) => p.$backgroundImage ? `url(${p.$backgroundImage})` : 'none'}; /* Зображення під сіткою */
+  
+    background-position: center -20px, top left, top left;
+  // Розмір сітки і зображення
+  background-size: 
+    40px 40px, /* Сітка */
+    40px 40px, /* Сітка */
+    cover; /* Зображення заповнює блок */
+  
+  // Для великих екранів
+  @media only screen and (min-width: ${breakpoints.medium}) {
+    background-size: 60px 60px, 60px 60px, cover; /* Зміна розміру сітки та зображення */
     padding: 30px 15px 50px 15px;
   }
 
-  @media only screen and (min-width: ${breakpoints.large})  {
+  @media only screen and (min-width: ${breakpoints.large}) {
     flex-direction: row;
     justify-content: space-between;
-    background-size: 96px 96px;
-
-    margin-right: -10px;
-    margin-left: -10px;
+    background-size: 96px 96px, 96px 96px, cover; /* Зміна розміру сітки та зображення */
     padding: 50px 30px 100px 30px;
   }
 `;

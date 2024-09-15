@@ -20,6 +20,11 @@ export const MobileMenu: FC<IMobileMenuProps> = ({ isOpen, toggle }) => {
                 </a>
             </li>
             <li>
+                <a href="#works" onClick={toggle}>
+                    Works
+                </a>
+            </li>
+            <li>
                 <a href="#services" onClick={toggle}>
                     Services
                 </a>

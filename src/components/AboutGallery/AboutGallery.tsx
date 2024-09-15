@@ -1,24 +1,30 @@
 import { FC } from "react";
+import { imagesAboutGallery } from "./imagesAboutGallery";
+import { breakpoints } from "../../constants/breakpoints";
+import { AboutGalleryWrapper, AboutPictureWrapper } from "./styled";
+import { IAboutGalleryProps } from "../../common/types/about";
 
-export const AboutGallery: FC = (): JSX.Element => (
-    <div > 
-      <picture>
-        <source srcSet="path-to-image1.webp" type="image/webp" />
-        <source srcSet="path-to-image1.jpeg" type="image/jpeg" />
-        <img src="path-to-image1.jpeg" alt="Image 1" />
+export const AboutGallery: FC<IAboutGalleryProps> = ({ setBackgroundImage }): JSX.Element => (
+    <AboutGalleryWrapper > 
+    {imagesAboutGallery.map((image, index) => (
+      <picture key={index}>
+        {/* Мобільна версія - WebP */}
+        <source 
+          srcSet={`${image.mobile.x1} 1x, ${image.mobile.x2} 2x`} 
+          type="image/webp" 
+          media="(max-width: 768px)" 
+        />
+        
+        {/* Десктопна версія - WebP */}
+        <source 
+          srcSet={`${image.desktop.x1} 1x, ${image.desktop.x2} 2x`} 
+          type="image/webp" 
+          media={`(max-width: ${breakpoints.medium})`} 
+        />
+        
+        {/* Fallback зображення */}
+        <AboutPictureWrapper src={image.fallback} alt={image.alt} onClick={() => setBackgroundImage(image.fallback)}/>
       </picture>
-      {/* Друге зображення */}
-      <picture>
-        <source srcSet="path-to-image2.webp" type="image/webp" />
-        <source srcSet="path-to-image2.jpeg" type="image/jpeg" />
-        <img src="path-to-image2.jpeg" alt="Image 2" />
-      </picture>
-  
-      {/* Третє зображення */}
-      <picture>
-        <source srcSet="path-to-image3.webp" type="image/webp" />
-        <source srcSet="path-to-image3.jpeg" type="image/jpeg" />
-        <img src="path-to-image3.jpeg" alt="Image 3" />
-      </picture>
-    </div>
+    ))}
+  </AboutGalleryWrapper>
   );

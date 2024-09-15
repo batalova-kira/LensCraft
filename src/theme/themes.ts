@@ -6,9 +6,10 @@ export const lightTheme: ITheme = {
         primary: "#db574d",
         background: "#fff",
         secondaryBackground: "rgba(255,255,255,0.5)",
-        textSecondary: "#131613",
+        textSecondary: "#e6e6e6",
         textAccent: '#5a5c5a',
         backgroundAbout: "#0E0F0E",
+        backgroundBlack:'#292929',
     },
     fonts: {
         main: "Arial, sans-serif",
@@ -24,6 +25,7 @@ export const darkTheme: ITheme = {
         textSecondary: "#e6e6e6",
         textAccent: '#5a5c5a',
         backgroundAbout: "#0E0F0E",
+        backgroundBlack:'#131613',
     },
     fonts: {
         main: "Arial, sans-serif",

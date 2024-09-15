@@ -44,6 +44,9 @@ export const TopBar: FC = (): JSX.Element => {
                         <a href="#about">About</a>
                     </li>
                     <li>
+                        <a href="#works">Works</a>
+                    </li>
+                    <li>
                         <a href="#services">Services</a>
                     </li>
                     <li>
