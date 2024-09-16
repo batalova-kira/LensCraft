@@ -82,7 +82,7 @@ max-width: 270px;
 word-wrap: break-word; 
 margin-bottom: 16px;
   
-color: ${(p) => p.theme.colors.textSecondary};
+color: ${(p) => p.theme.colors.textContrast};
 
 @media only screen and (min-width: ${breakpoints.medium})  {
     font-size: 42px;
@@ -121,7 +121,7 @@ font-weight: 300;
 font-size: 12px;
 text-transform: uppercase;
   
-color: ${(p) => p.theme.colors.textSecondary};
+color: ${(p) => p.theme.colors.textContrast};
 
 @media only screen and (min-width: ${breakpoints.medium})  {
     font-size: 14px;

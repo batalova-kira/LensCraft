@@ -20,6 +20,7 @@ export interface ITheme {
     background: string;
     secondaryBackground: string;
     textSecondary: string;
+    textContrast: string,
     textAccent: string;
     backgroundAbout: string;
     backgroundBlack:string;

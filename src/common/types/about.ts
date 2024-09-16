@@ -6,7 +6,6 @@ interface IImageSource {
   }
   
 export  interface IGalleryAboutImage {
-    mobile: IImageSource;
     desktop: IImageSource;
     fallback: string;
     alt: string;
@@ -17,5 +16,7 @@ export  interface IGalleryAboutImage {
   }
 
   export interface IAboutGalleryProps {
+    selectedCard: number | null;
+  setSelectedCard: Dispatch<SetStateAction<number | null>>;
     setBackgroundImage: Dispatch<SetStateAction<string>>;
   }
