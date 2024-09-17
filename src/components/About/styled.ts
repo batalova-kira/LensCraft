@@ -43,35 +43,33 @@ export const GridBackground = styled.div<IGridBackgroundProps>`
   width: 100%;
   padding: 24px 0px;
 
-  // Фон за замовчуванням (градієнт) або вибране зображення
-  background-color: ${(p) => p.$backgroundImage ? 'transparent' : p.theme.colors.backgroundBlack};
-  
+  background-color: ${(p) => (p.$backgroundImage ? 'transparent' : p.theme.colors.backgroundBlack)};
+
   background-image: 
-    linear-gradient(${(p) => p.theme.colors.textAccent} 1px, transparent 1px), /* Сітка */
-    linear-gradient(90deg, ${(p) => p.theme.colors.textAccent} 1px, transparent 1px), /* Сітка */
+    linear-gradient(${(p) => p.theme.colors.textAccent || '#FF0000'} 1px, transparent 1px), /* Сітка вертикальна */
+    linear-gradient(90deg, ${(p) => p.theme.colors.textAccent || '#FF0000'} 1px, transparent 1px), /* Сітка горизонтальна */
     ${(p) => p.$backgroundImage ? `url(${p.$backgroundImage})` : 'none'}; /* Зображення під сіткою */
+
+  background-position: top left, top left, center top; 
   
-    background-position: center -20px, top left, top left;
-  // Розмір сітки і зображення
   background-size: 
-    40px 40px, /* Сітка */
-    40px 40px, /* Сітка */
+    40px 40px, /* Сітка вертикальна */
+    40px 40px, /* Сітка горизонтальна */
     cover; /* Зображення заповнює блок */
-  
+
   // Для великих екранів
   @media only screen and (min-width: ${breakpoints.medium}) {
-    background-size: 60px 60px, 60px 60px, cover; /* Зміна розміру сітки та зображення */
+    background-size: 60px 60px, 60px 60px, cover; 
     padding: 30px 15px 50px 15px;
   }
 
   @media only screen and (min-width: ${breakpoints.large}) {
     flex-direction: row;
     justify-content: space-between;
-    background-size: 96px 96px, 96px 96px, cover; /* Зміна розміру сітки та зображення */
+    background-size: 96px 96px, 96px 96px, cover; 
     padding: 50px 30px 100px 30px;
   }
 `;
-
 export const AboutTitle = styled.h3`
 font-weight: 600;
 font-size: 32px;
