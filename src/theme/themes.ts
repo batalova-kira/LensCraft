@@ -11,6 +11,7 @@ export const lightTheme: ITheme = {
         textAccent: '#5a5c5a',
         backgroundAbout: "#0E0F0E",
         backgroundBlack:'#292929',
+        borderAccent: '#575957',
     },
     fonts: {
         main: "Arial, sans-serif",
@@ -28,6 +29,7 @@ export const darkTheme: ITheme = {
         textAccent: '#5a5c5a',
         backgroundAbout: "#0E0F0E",
         backgroundBlack:'#131613',
+        borderAccent: '#575957',
     },
     fonts: {
         main: "Arial, sans-serif",

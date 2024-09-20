@@ -6,7 +6,7 @@ import { darkTheme, lightTheme } from "./themes";
 import { ThemeContext } from "../hooks";
 
 export const ThemeProvider: FC<IThemeProviderProps> = ({ children }) => {
-    const [theme, setTheme] = useState<ITheme>(lightTheme);
+    const [theme, setTheme] = useState<ITheme>(darkTheme);
 
     const toggleTheme = useMemo(() => {
         return () => {

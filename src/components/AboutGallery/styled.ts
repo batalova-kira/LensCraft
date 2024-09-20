@@ -25,25 +25,14 @@ export const AboutGalleryWrapper = styled.div`
     }
 `;
 
-// export const AboutPictureWrapper = styled.img`
-//         width:50px;
-//         height:50px;
-
-    
-// `;
-
 export const AboutPictureWrapper = styled.div<{ $isSelected: boolean }>`
   position: relative;
   cursor: pointer;
   transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
-  transform: ${({ $isSelected }) => ($isSelected ? 'translateY(-60px)' : 'translateY(0)')};
-  box-shadow: ${({ $isSelected }) => ($isSelected ? '0px 10px 20px rgba(0, 0, 0, 0.2)' : 'none')};
-  padding: 16px;
-
-  
+  transform: ${({ $isSelected }) => ($isSelected ? 'translateY(-20px)' : 'translateY(0)')};
     
   &:hover {
-    /* transform: translateY(-10px); */
+    transform: translateY(-20px);
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
   }
 

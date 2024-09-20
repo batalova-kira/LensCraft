@@ -70,6 +70,7 @@ export const GridBackground = styled.div<IGridBackgroundProps>`
     padding: 50px 30px 100px 30px;
   }
 `;
+
 export const AboutTitle = styled.h3`
 font-weight: 600;
 font-size: 32px;

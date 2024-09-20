@@ -24,6 +24,7 @@ export interface ITheme {
     textAccent: string;
     backgroundAbout: string;
     backgroundBlack:string;
+    borderAccent: string;
   };
   fonts: {
     main: string;
