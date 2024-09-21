@@ -1,8 +1,14 @@
+import { AboutHeaderText, AboutHeaderWrapper } from "../About/styled";
+
 export const Services = (): JSX.Element => {
     return (
         <section id="services">
-            <h1>Services Section</h1>
-            <p>Check out our services!</p>
+            <AboutHeaderWrapper>
+                <AboutHeaderText>SERVICES</AboutHeaderText>
+                <AboutHeaderText>
+                WHAT WE CAN OFFER YOU
+                </AboutHeaderText>
+            </AboutHeaderWrapper>
         </section>
     );
 };

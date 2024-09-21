@@ -3,8 +3,8 @@ import { AboutHeaderText, AboutHeaderWrapper, AboutText, AboutTextWrapper, About
 import { FC, useState } from "react";
 
 export const About: FC = (): JSX.Element => {
-    const [backgroundImage, setBackgroundImage] = useState(''); // Стан для вибраного зображення
-    const [selectedCard, setSelectedCard] = useState<number | null>(null); // Стан для вибраної картки
+    const [backgroundImage, setBackgroundImage] = useState<string>(''); 
+    const [selectedCard, setSelectedCard] = useState<number | null>(null); 
   
     return (
       <section id="about">

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, FC } from "react";
 import { cardsWork } from "./cardsWork";
 import {
     PictureWrapper,
@@ -9,14 +9,14 @@ import {
     WorkCardWrapper,
 } from "./styled";
 
-export const WorksList: React.FC = () => {
+export const WorksList: FC = (): JSX.Element => {
     // Масив, який зберігає стан розкриття для кожної картки
     const [expandedCards, setExpandedCards] = useState<boolean[]>(
         Array(cardsWork.length).fill(false)
     );
 
     // Функція для перемикання розкриття конкретної картки
-    const toggleCard = (index: number) => {
+    const toggleCard = (index: number): void => {
         setExpandedCards((prev) => {
             const newExpanded = [...prev];
             newExpanded[index] = !newExpanded[index]; // Перемикаємо стан для вибраної картки

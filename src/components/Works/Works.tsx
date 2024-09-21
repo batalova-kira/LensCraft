@@ -1,8 +1,9 @@
 import { AboutHeaderText, AboutHeaderWrapper } from "../About/styled";
 import { WorksSection } from "../WorksGallery/styled";
 import { WorksList } from "../WorksGallery/WorksGallery";
+import { FC } from "react";
 
-export const Works = (): JSX.Element => {
+export const Works: FC = (): JSX.Element => {
     return (
         <WorksSection id="works">
             <AboutHeaderWrapper>

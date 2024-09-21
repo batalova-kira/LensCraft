@@ -99,7 +99,8 @@ display: block;
   width: 100%;
   height: ${({ $isExpanded }) => ($isExpanded ? '225px' : '66px')}; /* Висота зображення */
   object-fit: cover;
-
+  object-position: top; 
+  
   transition: height 0.4s ease-in-out;
 
   @media only screen and (min-width: ${breakpoints.medium}) {
