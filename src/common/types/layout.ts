@@ -25,6 +25,7 @@ export interface ITheme {
     backgroundAbout: string;
     backgroundBlack:string;
     borderAccent: string;
+    blackFilter: string;
   };
   fonts: {
     main: string;

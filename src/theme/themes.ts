@@ -12,6 +12,7 @@ export const lightTheme: ITheme = {
         backgroundAbout: "#0E0F0E",
         backgroundBlack:'#292929',
         borderAccent: '#575957',
+        blackFilter:"rgba(0, 0, 0, 0.5)",
     },
     fonts: {
         main: "Arial, sans-serif",
@@ -30,6 +31,7 @@ export const darkTheme: ITheme = {
         backgroundAbout: "#0E0F0E",
         backgroundBlack:'#131613',
         borderAccent: '#575957',
+        blackFilter:"rgba(0, 0, 0, 0.5)",
     },
     fonts: {
         main: "Arial, sans-serif",
