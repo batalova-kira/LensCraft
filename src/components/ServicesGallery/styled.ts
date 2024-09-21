@@ -21,7 +21,7 @@ export const ServicesImagesContainer = styled.div`
   flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* Розташування по 4 картки */
-  gap: 20px;
+  /* gap: 20px; */
 `;
 
 export const ServicesImageWrapper = styled.div<{ $isHovered: boolean }>`
@@ -30,6 +30,7 @@ export const ServicesImageWrapper = styled.div<{ $isHovered: boolean }>`
   transition: transform 0.3s ease-in-out;
 
   img {
+    display:block;
     width: 100%;
     height: auto;
     transition: transform 0.3s ease-in-out;

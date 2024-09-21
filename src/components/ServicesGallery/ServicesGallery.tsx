@@ -40,7 +40,22 @@ export const ServicesGallery: FC = (): JSX.Element => {
                         key={card.id}
                         $isHovered={hoveredImage === card.id}
                     >
-                        <img src={card.imageUrl_x1} alt={card.title} />
+                        <picture>
+                            {/* Для десктопів (ширина від 768px) */}
+                            <source
+                                srcSet={`${card.imageUrl_x1_desk} 1x, ${card.imageUrl_x2_desk} 2x`}
+                                media="(min-width: 768px)"
+                                type="image/webp"
+                            />
+                            {/* Для мобільних (ширина до 767px) */}
+                            <source
+                                srcSet={`${card.imageUrl_x1} 1x, ${card.imageUrl_x2} 2x`}
+                                media="(max-width: 767px)"
+                                type="image/webp"
+                            />
+                            {/* Fallback для браузерів, які не підтримують WebP */}
+                            <img src={card.imageUrl_jpeg} alt={card.title} />
+                        </picture>
                     </ServicesImageWrapper>
                 ))}
             </ServicesImagesContainer>
