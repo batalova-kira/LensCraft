@@ -2,6 +2,7 @@ import { useState, FC } from "react";
 import { cardsServices } from "./ServicesCard";
 import {
     ServicesGalleryContainer,
+    ServicesHeader,
     ServicesImagesContainer,
     ServicesImageWrapper,
     ServicesTitle,
@@ -23,6 +24,7 @@ export const ServicesGallery: FC = (): JSX.Element => {
     return (
         <ServicesGalleryContainer>
             <ServicesTitlesContainer>
+                <ServicesHeader>SERVICES WE CAN OFFER </ServicesHeader>
                 {cardsServices.map((card) => (
                     <ServicesTitle
                         key={card.id}
