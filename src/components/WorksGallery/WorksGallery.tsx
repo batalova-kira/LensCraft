@@ -7,6 +7,7 @@ import {
     WorkCardHeaderContainer,
     WorkCardImage,
     WorkCardWrapper,
+    WorksCardsContainer,
 } from "./styled";
 
 export const WorksList: FC = (): JSX.Element => {
@@ -25,7 +26,7 @@ export const WorksList: FC = (): JSX.Element => {
     };
 
     return (
-        <div>
+        <WorksCardsContainer>
             {cardsWork.map((card, index) => (
                 <WorkCardWrapper
                     key={card.id}
@@ -56,6 +57,6 @@ export const WorksList: FC = (): JSX.Element => {
                     </PictureWrapper>
                 </WorkCardWrapper>
             ))}
-        </div>
+        </WorksCardsContainer>
     );
 };

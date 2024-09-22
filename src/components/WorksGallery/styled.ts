@@ -13,6 +13,13 @@ export const WorksSection = styled.div`
     }
   `
 
+export const WorksCardsContainer = styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  align-items:center;
+  `
+
 export const WorkCardWrapper = styled.div<{ $isExpanded: boolean }>`
   width: 343px;
   height: ${({ $isExpanded }) => ($isExpanded ? '334px' : '132px')}; /* Загальна висота в закритому стані більше */

@@ -1,82 +1,108 @@
 import styled from "styled-components";
 import { breakpoints } from "../../constants/breakpoints";
+import HeroBtn from "../../assets/icons/hero-btn.svg";
 
 export const ServicesGalleryContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items:center;
-  
-  @media only screen and (min-width: ${breakpoints.medium}) {
-    flex-direction: row;
-    justify-content: space-between;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+
+    @media only screen and (min-width: ${breakpoints.medium}) {
+        flex-direction: row;
+        gap:36px;
+    }
+
+    @media only screen and (min-width: ${breakpoints.large}) {
+    
+        gap:54px;
+    }
 `;
 
 export const ServicesTitlesContainer = styled.div`
-   display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 
-  width: 219px;
-  /* Заголовки один за одним без відступів */
-  /* h2 {
-    margin-bottom: 10px;
-  } */
+    width: 223px;
+    margin-bottom: 38px;
 
-  @media only screen and (min-width: ${breakpoints.medium}) {
-    flex: 1;
-    h2 {
-      margin-bottom: 20px; /* Відступи між заголовками тільки на великих екранах */
+    @media only screen and (min-width: ${breakpoints.medium}) {
+      width: 240px;
     }
-  }
+
+    @media only screen and (min-width: ${breakpoints.large}) {
+      width: 267px;
+    }
 `;
 
 export const ServicesHeader = styled.h2`
-margin-bottom: 35px;
-
-  font-weight: 600;
-font-size: 32px;
-line-height: 1;
-text-transform: uppercase;
-color: ${(p) => p.theme.colors.textSecondary};
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 1;
+    text-transform: uppercase;
+    color: ${(p) => p.theme.colors.textSecondary};
 `;
 
+export const ServicesLogo = styled(HeroBtn)`
+    width: 80px;
+    height: 80px;
+
+    margin: 35px 0px;
+    margin-right: auto;
+    margin-left: auto;
+`;
 export const ServicesTitle = styled.h2`
-  font-size: 18px;
-  margin-bottom: 20px;
+    margin-bottom: 16px;
+
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.3;
+    color: ${(p) => p.theme.colors.textSecondary};
 `;
 
 export const ServicesImagesContainer = styled.div`
-   display: grid;
-  grid-template-columns: 1fr; /* Для мобільних — одна колонка */
-  margin-bottom: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
 
-  @media only screen and (min-width:  ${breakpoints.medium}) {
-    flex: 1;
-    grid-template-columns: repeat(2, 1fr); /* Для десктопів — 2 колонки */
-    margin-bottom: 24px;
-  }
+    @media only screen and (min-width: ${breakpoints.medium}) {
+        flex-direction: row;
+        flex-wrap:wrap;
+    }
 `;
 
 export const ServicesImageWrapper = styled.div<{ $isHovered: boolean }>`
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    max-width: 343px;
+    line-height: 0;
 
-  img {
-    display: block;
-    width: 100%;
-    height: auto;
-    transition: filter 0.3s ease-in-out, brightness 0.3s ease-in-out, saturation 0.3s ease-in-out;
-    object-fit: cover;
-  }
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
 
-  /* При наведенні зображення стає більш насиченим і яскравішим */
-  ${({ $isHovered }) =>
-    $isHovered &&
-    `
+        transition: filter 0.3s ease-in-out, brightness 0.3s ease-in-out,
+            saturation 0.3s ease-in-out;
+        object-fit: cover;
+    }
+
+    /* При наведенні зображення стає більш насиченим і яскравішим */
+    ${({ $isHovered }) =>
+        $isHovered &&
+        `
     img {
       filter: brightness(1.3) saturate(1.5); /* Підвищуємо яскравість і насиченість */
     }
   `}
+
+@media only screen and (min-width: ${breakpoints.medium}) {
+      max-width: 246px;
+    }
+
+@media only screen and (min-width: ${breakpoints.large}) {
+      max-width:440px;
+    }
 `;

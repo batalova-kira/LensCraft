@@ -5,6 +5,7 @@ import {
     ServicesHeader,
     ServicesImagesContainer,
     ServicesImageWrapper,
+    ServicesLogo,
     ServicesTitle,
     ServicesTitlesContainer,
 } from "./styled";
@@ -25,6 +26,7 @@ export const ServicesGallery: FC = (): JSX.Element => {
         <ServicesGalleryContainer>
             <ServicesTitlesContainer>
                 <ServicesHeader>SERVICES WE CAN OFFER </ServicesHeader>
+                <ServicesLogo />
                 {cardsServices.map((card) => (
                     <ServicesTitle
                         key={card.id}
