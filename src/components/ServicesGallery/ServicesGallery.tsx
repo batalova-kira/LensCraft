@@ -43,6 +43,9 @@ export const ServicesGallery: FC = (): JSX.Element => {
                     <ServicesImageWrapper
                         key={card.id}
                         $isHovered={hoveredImage === card.id}
+                        onMouseEnter={() => setHoveredImage(card.id)}
+                        onMouseLeave={() => setHoveredImage(null)}
+                        onClick={() => handleTitleClick(card.id)}
                     >
                         <picture>
                             {/* Для десктопів (ширина від 768px) */}

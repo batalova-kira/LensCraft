@@ -31,3 +31,10 @@ export interface ITheme {
     main: string;
   };
 }
+
+export interface IBreakpoints {
+  large: string;
+  medium: string;
+  small: string;
+  beforeMedium: string;
+}
