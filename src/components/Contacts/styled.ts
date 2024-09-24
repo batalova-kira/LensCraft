@@ -12,9 +12,9 @@ export const ContactsContainer = styled.div`
 
 export const ContactsTextContainer = styled.div`
     width: 100%;
-    height: 100px; /* висота контейнера */
+    height: 100px; 
     position: relative;
-    overflow: hidden; /* обрізаємо зайвий текст */
+    overflow: hidden; 
     margin: 48px 0px;
 `;
 
@@ -28,7 +28,7 @@ export const ContactsText = styled.p`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Вирівнює текст по центру */
+    transform: translate(-50%, -50%); 
     
     text-shadow: -1px -1px 0 ${(p) => p.theme.colors.textSecondary},
         1px -1px 0 ${(p) => p.theme.colors.textSecondary},
@@ -43,10 +43,33 @@ export const ContactsText = styled.p`
 
 export const SocialMediaContainer = styled.div`
 display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  
+  gap: 24px;
+  margin-bottom: 48px;
+
+  @media only screen and (min-width: ${breakpoints.medium}) {
+    flex-direction: row;
+    justify-content: space-between;
+    }
+`;
+
+export const EmailLink = styled.a`
+display:block;
+padding: 16px 40px;
+font-weight: 600;
+font-size: 18px;
+text-transform: uppercase;
+
+line-height: 1.1;
+text-align: center;
+color: ${(p) => p.theme.colors.background};
+background:${(p) => p.theme.colors.textSecondary};
+
+  @media only screen and (min-width: ${breakpoints.medium}) {
+    
+    }
 `;
 
 export const SocialMediaList = styled.ul`
@@ -59,7 +82,6 @@ export const SocialMediaItem = styled.li`
 list-style: none;
 
 a {
-    padding: 5px;
   width: 24px;
   height: 24px;
   background-color: #E6E6E6; 
@@ -70,7 +92,7 @@ a {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent; 
+  border: 2px solid #E6E6E6; 
   transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
@@ -94,10 +116,9 @@ a:before {
   }
 
 a .icon {
-    
-  font-size: 16px;
+ font-size: 16px;
   color: #262626;
-  transition: transform 0.5s ease, color 0.5s ease;
+  transition: transform 0.9s ease, color 0.6s ease;
   z-index: 1;
 }
 
@@ -116,10 +137,63 @@ a:hover .icon {
 }
 
 &:nth-child(3) a {
-  color: #0077b5; /* LinkedIn */
+  color: #E1306C; /* Instagram */
 }
 
 &:nth-child(4) a {
-  color: #dd4b39; /* Google+ */
+  color: #ff0000; /* Youtube */
+}
+`;
+
+export const LogoFooter = styled.div`
+display:flex;
+flex-direction:column;
+align-items:center;
+    gap:16px;
+    margin-bottom: 48px;
+
+     @media only screen and (min-width: ${breakpoints.medium}) {
+    margin-bottom: 0px;
+    align-items:flex-start;
+    }
+`;
+
+export const AddressFooterContainer = styled.div`
+display:flex;
+flex-direction:column;
+margin-bottom: 24px;
+
+ @media only screen and (min-width: ${breakpoints.medium}) {
+    flex-direction:row;
+    justify-content: space-between;
+    align-items:center;
+    }
+`;
+
+export const TextAddressFooter = styled.p`
+font-size: 16px;
+color: ${(p) => p.theme.colors.textSecondary};
+`;
+
+export const FooterLinksList = styled.ul`
+display:flex;
+flex-direction:column;
+align-items:center;
+gap: 16px;
+
+list-style: none; 
+
+ @media only screen and (min-width: ${breakpoints.medium}) {
+    align-items:flex-end;
+    }
+`;
+
+export const FooterLink = styled.li`
+font-size: 16px;
+line-height: 1.5;
+color: ${(p) => p.theme.colors.textSecondary};
+
+&:hover{
+    color: ${(p) => p.theme.colors.primary};
 }
 `;

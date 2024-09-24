@@ -67,6 +67,7 @@ export const ServicesTitle = styled.h2`
 
     &:hover {
         cursor: pointer;
+        color: ${(p) => p.theme.colors.primary};
     }
 
     @media only screen and (max-width: ${breakpoints.beforeMedium}),

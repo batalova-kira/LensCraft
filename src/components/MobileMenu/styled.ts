@@ -18,10 +18,8 @@ export const StyledMobileMenu = styled(motion.ul)`
   border-radius: 0; /* Займає всю праву частину екрану, тому без скруглень */
   background: ${(p) => p.theme.colors.default}; 
   z-index: 100;
-a{
+
+a {
   color: ${(p) => p.theme.colors.background};
- 
 }
-  
-  
 `;
