@@ -51,8 +51,8 @@ display: flex;
 
 export const SocialMediaList = styled.ul`
     display: flex;
-  justify-content: center; /* Центрує іконки по горизонталі */
-  gap: 8px; /* Відстань між іконками */
+  justify-content: center; 
+  gap: 8px; 
 `;
 
 export const SocialMediaItem = styled.li`
@@ -62,7 +62,7 @@ a {
     padding: 5px;
   width: 24px;
   height: 24px;
-  background-color: #E6E6E6; /* Прозорий фон спочатку */
+  background-color: #E6E6E6; 
   text-align: center;
   display: flex;
   align-items: center;
@@ -70,7 +70,7 @@ a {
   border-radius: 50%;
   position: relative;
   overflow: hidden;
-  border: 2px solid transparent; /* Видимий бордер при ховері */
+  border: 2px solid transparent; 
   transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 
@@ -78,19 +78,19 @@ a {
 a:before {
     content: "";
     position: absolute;
-    bottom: -100%; /* Початок знизу */
+    bottom: -100%; 
     left: 0;
     width: 100%;
     height: 100%;
-    background: currentColor; /* Колір іконки для заливки */
+    background: currentColor; 
     z-index: 0;
-    transition: bottom 0.5s ease; /* Плавна зміна положення знизу */
+    transition: bottom 0.5s ease; 
   }
 
   /* Анімація при ховері: фон підіймається знизу */
   a:hover:before {
     background-color: currentColor;
-    bottom: 0; /* Заливає весь елемент знизу вгору */
+    bottom: 0; 
   }
 
 a .icon {
@@ -98,12 +98,12 @@ a .icon {
   font-size: 16px;
   color: #262626;
   transition: transform 0.5s ease, color 0.5s ease;
-  z-index: 1; /* Іконка зверху */
+  z-index: 1;
 }
 
 a:hover .icon {
   transform: rotateY(360deg); /* Дзеркальне обертання */
-  color: #fff; /* Зміна кольору іконки */
+  color: #fff; 
 }
 
 /* Стилі для різних соцмереж */
