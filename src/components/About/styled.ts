@@ -7,14 +7,14 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 
-padding: 13px 0px;
+margin: 13px 0px;
 
 @media only screen and (min-width: ${breakpoints.medium})  {
-  padding: 24px 0px;
+  margin: 24px 0px;
   } 
 
 @media only screen and (min-width: ${breakpoints.large})  {
-  padding: 40px 0px;
+  margin: 40px 0px;
   }
 `;
 

@@ -1,5 +1,18 @@
 import { AboutHeaderText, AboutHeaderWrapper } from "../About/styled";
-import { ContactsContainer, ContactsText, ContactsTextContainer } from "./styled";
+import {
+    ContactsContainer,
+    ContactsText,
+    ContactsTextContainer,
+    SocialMediaContainer,
+    SocialMediaItem,
+    SocialMediaList,
+} from "./styled";
+import {
+    FaFacebookF,
+    FaTwitter,
+    FaLinkedinIn,
+    FaGooglePlusG,
+} from "react-icons/fa";
 
 export const Contacts = (): JSX.Element => {
     return (
@@ -11,11 +24,35 @@ export const Contacts = (): JSX.Element => {
                 </AboutHeaderText>
             </AboutHeaderWrapper>
             <ContactsTextContainer>
-            <ContactsText>LET`S WORK TOGETHER</ContactsText>
+                <ContactsText>LET`S WORK TOGETHER</ContactsText>
             </ContactsTextContainer>
-            <div>
-            <a href="mailto:hello@lenscraft.com">hello@lenscraft.com</a>
-            </div>
+            <SocialMediaContainer>
+                <a href="mailto:hello@lenscraft.com">hello@lenscraft.com</a>
+            
+                    <SocialMediaList>
+                        <SocialMediaItem>
+                            <a href="https://www.facebook.com/">
+                                <FaFacebookF className="icon"/>
+                            </a>
+                        </SocialMediaItem>
+                        <SocialMediaItem>
+                            <a href="#">
+                                <FaTwitter className="icon"/>
+                            </a>
+                        </SocialMediaItem>
+                        <SocialMediaItem>
+                            <a href="#">
+                                <FaLinkedinIn className="icon"/>
+                            </a>
+                        </SocialMediaItem>
+                        <SocialMediaItem>
+                            <a href="#">
+                                <FaGooglePlusG className="icon"/>
+                            </a>
+                        </SocialMediaItem>
+                    </SocialMediaList>
+                
+            </SocialMediaContainer>
         </ContactsContainer>
     );
 };
