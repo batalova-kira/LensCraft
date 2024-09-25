@@ -616,8 +616,13 @@ padding: 0px 16px;
     @media only screen and (min-width: ${M.medium}) {
         align-items: start;
         flex-direction: row;
+
+        gap:36px;
         margin-bottom: 24px;
     }
+
+    @media only screen and (min-width: ${M.large}) {
+        gap:54px;}
 `,BE=D.div`
     display: flex;
     flex-direction: column;
@@ -626,7 +631,8 @@ padding: 0px 16px;
     margin-bottom: 38px;
 
     @media only screen and (min-width: ${M.medium}) {
-        width: 290px;
+        min-width: 223px;
+        margin-bottom: 0px;
     }
 
     @media only screen and (min-width: ${M.large}) {
@@ -658,8 +664,12 @@ padding: 0px 16px;
         margin-left: auto;
     }
 `,WE=D.h2`
-    margin-bottom: 12px;
+
     font-size: 12px;
+
+ &:not(:last-child) {
+    margin-bottom: 12px; 
+  }
 
     &:hover {
         cursor: pointer;
@@ -707,14 +717,15 @@ padding: 0px 16px;
     }
 
     @media only screen and (min-width: ${M.medium}) {
-        max-width: 295px; /* Фіксована ширина зображення на екранах від 768px */
+        width: 50%; /* Кожне зображення займає 50% ширини, щоб було по 2 в ряд */
+        max-width: 50%; 
+        /* max-width: 295px;  */
     }
 
-    @media only screen and (min-width: ${M.large}) {
-        max-width: 440px; /* Фіксована ширина зображення на екранах від 1440px */
-    }
+    /* @media only screen and (min-width: ${M.large}) {
+        max-width: 440px; 
+    } */
 
-    /* Підвищуємо яскравість і насиченість при наведенні */
     ${({$isHovered:e})=>e&&`
     img {
       filter: brightness(1.3) saturate(1.5);
