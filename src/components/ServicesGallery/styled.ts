@@ -13,8 +13,13 @@ export const ServicesGalleryContainer = styled.div`
     @media only screen and (min-width: ${breakpoints.medium}) {
         align-items: start;
         flex-direction: row;
+
+        gap:36px;
         margin-bottom: 24px;
     }
+
+    @media only screen and (min-width: ${breakpoints.large}) {
+        gap:54px;}
 `;
 
 export const ServicesTitlesContainer = styled.div`
@@ -25,7 +30,8 @@ export const ServicesTitlesContainer = styled.div`
     margin-bottom: 38px;
 
     @media only screen and (min-width: ${breakpoints.medium}) {
-        width: 290px;
+        min-width: 223px;
+        margin-bottom: 0px;
     }
 
     @media only screen and (min-width: ${breakpoints.large}) {
@@ -62,8 +68,12 @@ export const ServicesLogo = styled(HeroBtn)`
     }
 `;
 export const ServicesTitle = styled.h2`
-    margin-bottom: 12px;
+
     font-size: 12px;
+
+ &:not(:last-child) {
+    margin-bottom: 12px; 
+  }
 
     &:hover {
         cursor: pointer;
@@ -115,14 +125,15 @@ export const ServicesImageWrapper = styled.div<{ $isHovered: boolean }>`
     }
 
     @media only screen and (min-width: ${breakpoints.medium}) {
-        max-width: 295px; /* Фіксована ширина зображення на екранах від 768px */
+        width: 50%; /* Кожне зображення займає 50% ширини, щоб було по 2 в ряд */
+        max-width: 50%; 
+        /* max-width: 295px;  */
     }
 
-    @media only screen and (min-width: ${breakpoints.large}) {
-        max-width: 440px; /* Фіксована ширина зображення на екранах від 1440px */
-    }
+    /* @media only screen and (min-width: ${breakpoints.large}) {
+        max-width: 440px; 
+    } */
 
-    /* Підвищуємо яскравість і насиченість при наведенні */
     ${({ $isHovered }) =>
         $isHovered &&
         `
